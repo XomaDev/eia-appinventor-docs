@@ -1,9 +1,7 @@
 {
   "index": "Introduction",
-  "contact": {
-    "title": "Contact ↗",
-    "type": "page",
-    "href": "https://twitter.com/shuding_",
-    "newWindow": true
-  }
+  "basic-syntax": "Basic Syntax",
+  "appinventor-interop": "App Inventor Interoperability",
+  "java-interop": "Java Interoperability",
+  "ui-rendering": "UI Rending"
 }
