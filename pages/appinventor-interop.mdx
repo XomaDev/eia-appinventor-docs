@@ -1,0 +1,75 @@
+## Accessing components
+
+You can refer to a component by it's Designer name, such as `Button1`.
+Then you may call it's functions, set properties or listen to Events.
+
+
+### Functions and Properties
+
+```swift copy
+// show a simple toast usin the Notifier component
+Notifier1.ShowAlert("Hello, World!")
+```
+
+```swift copy
+// join the list elements and set to Label1's Text
+let names = makeList("App", "Inventor")
+for (name in names) {
+    Label1.Text(Label1.Text() + name)
+}
+```
+
+### Events
+
+You can also listen to a component's event!
+
+
+```swift copy
+// listening to Button1's Click
+Button1:Click {
+    // show a toast when Button1 is clicked
+    Notifier1.ShowAlert("Why did you click me?")
+}
+```
+
+If the event has parameters:
+
+```swift copy
+Notifier1:AfterChoosing(choice: String) {
+    // do someting!
+    Notifier1.ShowAlert("You choose " + choice)
+}
+```
+
+## Lookup components
+
+You can query for components using with a string.
+
+```swift copy
+let acceptButton = get("Button1")
+acceptButton.Text("Hello, World!")
+```
+
+Query many components with regex filter:
+
+```swift copy
+// Query for components whose name matches Button{number} format.
+// The second argument specifies the type must be a button (java class simple name)
+let myButtons = search("Button//d+", "Button")
+```
+
+## Call a procedure
+
+You can also call an App Inventor procedure!
+
+```swift copy
+let result = procedure("myProcedureName", arg1, arg2...)
+Notifier1.ShowAlert("Procedure returned: " + result)
+```
+
+## Control Calls
+
+`openScreen(name: String)` - Opening a screen\
+`closeScreen()` - Closes current screen\
+`closeApp()` - Closes the application\
+`startValie()` - Returns start value as a String

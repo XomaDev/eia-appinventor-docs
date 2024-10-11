@@ -1,0 +1,35 @@
+Eia is also mimimally interoperable with Java.\
+It helps in scenarios where to access few runtime APIs that would otherwise require compiling new extensions or modification to the App Inventor source code.
+
+## Examples
+
+1. Using the Java string API to trim a Label's content
+
+```kotlin copy
+// trim Label1's Text and update
+Label1.Text(Label1.Text().trim())
+```
+
+2. Calling Android APIs to retrieve information
+
+```swift copy
+// returns package name of actvitiy that opened our application
+// e.g. "android-app://com.sec.android.app.launcher"
+let caller = screen.getReferrer().toString()
+```
+
+> In the above example, `screen` is the current Activity object.
+
+3. Showing a custom toast with Android API
+
+```swift copy
+know android.widget.Toast
+
+let toast = Toast.makeText(
+    screen, // context
+    "Hello, World!",
+    Toast.LENGTH_LONG
+)
+toast.setDuration(2000)
+toast.show()
+```

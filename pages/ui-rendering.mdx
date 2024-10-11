@@ -1,0 +1,44 @@
+You can also dynamically render your app UI with Eia!
+
+# Examples
+
+1. Rendering a simple button
+
+```swift copy
+// we are going to add button to this layout
+let myVA = get("VerticalArrangement1")
+
+// create a new button in myVA named helloBtn
+@Button(myVA) helloBtn {
+    Text: "Hello, World",
+    TextColor: #FFFFFF
+    Width: 100,
+    BackgroundColor: #000000
+}
+```
+
+2. Rendering a layout and displaying as a dialog
+
+```
+know android.app.AlertDialog$Builder
+know android.view.ViewGroup
+
+
+let layout = @HorizontalArrangement {
+    Width: -1,
+    @Button acceptBtn {
+        Text: "Accept",
+        WidthPercent: 50,
+        when.Click: Notifier1.ShowAlert("Thanks for accepting!")
+    }
+    @Button declineBtn {
+        Text: "Decline",
+        WidthPercent: 50,
+        when.Click: closeApp()
+    }
+}
+
+let builder = new Builder(screen)
+builder.setView(layout.getView())
+builder.create().show()
+```

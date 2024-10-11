@@ -1,0 +1,132 @@
+# Basic Syntax
+
+`//` is used to add comments.\
+Use of semicolons (`;`) is not required.
+
+### Datatypes
+
+All of the data types are interoperable with App Inventor.
+`Bool`, `Int`, `Char`, `Float`, `Double`, `Any`, `Nil`, `List`, `Dict` are the supported types.
+
+An example of few:
+
+```swift copy
+print(
+    "Hello, World!", // a String
+    'A',             // a Char
+    true,            // a Bool
+    123,             // an Int
+    12.3,            // a Float
+    3.14D,           // a Double
+    makeList("App", "Inventor") // a List
+    // a Dict
+    makeDict(
+        "India": "Delhi",
+        "USA", "Washington DC"
+    )
+)
+```
+
+This outputs the following:
+
+```
+Hello, World!
+A 
+true
+123
+12.3
+3.14
+["App", "Inventor"]
+{"India":"Delhi", "USA": "Washington DC"}
+```
+
+### Conditional Expressions
+
+```swift copy
+let x = 5
+let y = 8
+
+if (x > y) {
+  print("X is greater")
+} else if (x == y) {
+  print("Both are equal!")
+} else {
+  print("Y is greater")
+} 
+```
+
+You may use `if` not just for flow control, but also as an expression:
+
+```swift copy
+let x = 5
+let y = 8
+
+println(if (x > y) "X is greater" else "Y is greater")
+```
+
+### For loop
+
+```swift copy
+let places = arrayOf("India", "Japan", "Germany")
+for (place in places) {
+  print(place)
+}
+```
+
+or the classical way:
+
+```swift copy
+let places = arrayOf("India", "Japan", "Germany")
+for (var i = 0; i < len(places); i++) {
+  print(places[i])
+}
+```
+
+### Until loop
+
+```swift copy
+let places = arrayOf("India", "Japan", "Germany")
+var index = 0
+until (index < len(places)) {
+  print("Item at index " + index + " is " + places[index])
+  index++
+}
+```
+
+### Special loop
+
+It's one of the special features offered by Eia!
+
+Iterating backwards from 5 to 1:
+
+```swift copy
+each (x: 5 to 1) {
+  print(x)
+}
+```
+
+Iteration from 2 to 10 by increment of 2:
+
+```swift copy
+each (y: 2 to 10 by 2) {
+  print(x)
+}
+```
+
+### Type checks and casting
+
+Like Kotlin, the `is` checks if an expression belongs to a certain type.
+
+```swift copy
+let a = "Meow!"
+println(a is String)            // true
+println("Meow" + 8 is Int)      // false```
+```
+
+To cast values, for example from `Any` to `Int`, we use the cast operator `::` followed by a type:
+
+```swift copy
+// casting from Any to String
+let name: Any = "Meow"
+let reName: String = name::String
+```
