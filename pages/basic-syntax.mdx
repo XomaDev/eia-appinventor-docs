@@ -132,3 +132,29 @@ To cast values, for example from `Any` to `Int`, we use the cast operator `::` f
 let name: Any = "Meow"
 let reName: String = name::String
 ```
+
+### Functions
+
+Eia functions are declared using the `fun` keyword:
+
+```kotlin copy
+fun square(x: Int): Int {
+  return x * x
+}
+```
+
+then to call a function:
+
+```kotlin copy
+let squared = square(5)
+```
+
+#### Parameters
+
+Parameters are defined in the format `name: Type` and are seperated using commas:
+
+```kotlin copy
+fun sayMeow(n: Int) {
+  print("Meow ".repeat(n))
+}
+```
